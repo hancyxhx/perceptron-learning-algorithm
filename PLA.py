@@ -70,7 +70,7 @@ def PLA(trainingData):
     while True:
         k += 1
 
-        (status, x, y) = anyMistakePoint(trainingData, w)
+        (status, x, y) = noMistakePoint(trainingData, w)
         draw(trainingData, w, k, x) # 画图
         if status == 'YES': # Step 2: 切分正确，学习完成
             return w
@@ -87,7 +87,7 @@ def mSign(m):
 
 
 
-def anyMistakePoint(training_data, w):
+def noMistakePoint(training_data, w):
     '''训练数据中是否有点被切分错误'''
     status = 'YES'
     for (x, y) in training_data:
